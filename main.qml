@@ -80,14 +80,6 @@ ApplicationWindow {
         }
     }
 
-    function loadBusList(){
-//        if (textFieldSearchInput.text.length > 0) {
-            retrieveBusListFromServer(textFieldSearchInput.text);
-  //      }
-    //    else
-      //      emptySearchStringMessageDialog.open();
-    }
-
     function getBusId(busLineDescription) {
         var busLineNumber = busLineDescription.split(" ")[0];
         for(var i = 0; i < busList.length; i++){
@@ -210,7 +202,6 @@ ApplicationWindow {
                         onClicked: {
                             busNamesArray.length = 0;
                             if (textFieldSearchInput.text.length > 0) {
-                                //loadBusList();
                                 retrieveBusListFromServer(textFieldSearchInput.text);
                                 httpResponseTimer.timerCount = 0;
                                 httpResponseTimer.start();
